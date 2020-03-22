@@ -8,6 +8,15 @@ body {
   font-family: 'Poppins', sans-serif;
   font-size: 62.5%; }
 
+h2 {
+  font-size: 2.7rem; }
+
+h3 {
+  font-size: 2.3rem; }
+
+p {
+  font-size: 1rem; }
+
 a {
   text-decoration: none; }
 
@@ -69,17 +78,16 @@ header {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    align-items: center; }
+    align-items: center;
+    padding-bottom: 100px; }
     @media (max-width: 768px) {
       header .site-header {
         display: block; } }
     header .site-header .header-content h2 {
-      font-size: 45px;
       font-weight: 500;
       margin-bottom: 20px;
       color: #fff; }
     header .site-header .header-content p {
-      font-size: 1rem;
       margin-bottom: 30px;
       color: #fff; }
     header .site-header .header-content .cta {
@@ -96,4 +104,53 @@ header {
         color: #fff;
         border-radius: 100px;
         background: #21d397;
-        margin-right: 25px; }
+        margin-right: 25px;
+        transition: all 1.5s ease; }
+        header .site-header .header-content .cta .btn:hover {
+          background-color: #7450fe; }
+
+main {
+  background: url("/img/bg-about.svg") no-repeat center center/cover; }
+  main .site-main {
+    width: 80%;
+    margin: 5rem auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    align-items: center; }
+    main .site-main .main-image img {
+      transition: all 1s ease-out;
+      animation: bounce 5s infinite; }
+    main .site-main .main-info a.btn {
+      color: #fff;
+      display: inline-block;
+      border-radius: 50px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 5px 15px;
+      background-color: #4b3da7;
+      transition: all 1.5s ease; }
+      main .site-main .main-info a.btn:hover {
+        background-color: #21d397; }
+    main .site-main .main-info h3 {
+      font-weight: 600;
+      margin: 20px 0 10px;
+      color: #4b3da7; }
+    main .site-main .main-info P {
+      color: #718096;
+      font-weight: 400; }
+    main .site-main .main-info a.learnMore {
+      display: inline-block;
+      font-size: 1rem;
+      color: #718096;
+      font-weight: 400;
+      margin-top: 15px; }
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px); }
+  50% {
+    transform: translateY(20px); }
+  100% {
+    transform: translateY(0px); } }

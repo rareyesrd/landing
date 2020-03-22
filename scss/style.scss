@@ -12,6 +12,18 @@ body {
 }
 
 // General styles
+h2 {
+    font-size: 2.7rem;
+}
+
+h3 {
+    font-size: 2.3rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
 a {
     text-decoration: none;
 }
@@ -103,6 +115,7 @@ header {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
+        padding-bottom: 100px;
 
         @media(max-width: 768px) {
             display: block;
@@ -110,14 +123,12 @@ header {
 
         .header-content {
             h2 {
-                font-size: 45px;
                 font-weight: 500;
                 margin-bottom: 20px;
                 color: #fff;
             }
 
             p {
-                font-size: 1rem;
                 margin-bottom: 30px;
                 color: #fff;
             }
@@ -138,9 +149,80 @@ header {
                     border-radius: 100px;
                     background: #21d397;
                     margin-right: 25px;
+                    transition: all 1.5s ease;
+
+                    &:hover {
+                        background-color: #7450fe;
+                    }
                 }
             }
         }
 
     }
 }
+
+main {
+    background: url('/img/bg-about.svg') no-repeat center center / cover;
+    .site-main {
+        width: 80%;
+        margin: 5rem auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        align-items: center;
+        .main-image{
+            img{
+                transition: all 1s ease-out;
+                animation: bounce 5s infinite;
+            }
+        }
+        .main-info {
+            a.btn {
+                color: #fff;
+                display: inline-block;
+                border-radius: 50px;
+                font-size: 12px;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 5px 15px;
+                background-color: #4b3da7;
+                transition: all 1.5s ease;
+
+                &:hover {
+                    background-color: #21d397;
+                }
+            }
+
+            h3 {
+                font-weight: 600;
+                margin: 20px 0 10px;
+                color: #4b3da7;
+            }
+
+            P {
+                color: #718096;
+                font-weight: 400;
+            }
+
+            a.learnMore {
+                display: inline-block;
+                font-size: 1rem;
+                color: #718096;
+                font-weight: 400;
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+@keyframes bounce {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+      }
+    100% {
+      transform: translateY(0px);
+    }
+  }
