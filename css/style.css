@@ -1,4 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,600,800,900&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 62.5%; }
+
+a {
+  text-decoration: none; }
+
+ul {
+  list-style: none; }
+
+.btn {
+  color: #fff;
+  background: #21d397; }
+
+img {
+  width: 100%; }
+
+header {
+  background: url("../img/wave.png") no-repeat center center/cover; }
+  header .navegation {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
+    header .navegation .navbar {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline; }
+      header .navegation .navbar .nav-logo {
+        flex-basis: 30%; }
+        header .navegation .navbar .nav-logo a {
+          color: #fff;
+          font-size: 25px; }
+          header .navegation .navbar .nav-logo a span {
+            color: #21d397; }
+      header .navegation .navbar ul.nav-links {
+        flex-basis: 60%;
+        display: flex;
+        justify-content: flex-end; }
+        header .navegation .navbar ul.nav-links li.nav-item a {
+          text-transform: uppercase;
+          color: #fff;
+          font-size: 15px;
+          margin-right: 35px; }
+      header .navegation .navbar a.btn {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 33px;
+        padding: 0 20px;
+        min-width: 100px;
+        height: 35px;
+        border-radius: 5px;
+        border: 1px solid #fff;
+        letter-spacing: 1px;
+        transition: all .5s ease; }
+        header .navegation .navbar a.btn:hover {
+          background-color: #7450fe; }
+  header .site-header {
+    padding-top: 30px;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center; }
+    @media (max-width: 768px) {
+      header .site-header {
+        display: block; } }
+    header .site-header .header-content h2 {
+      font-size: 45px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      color: #fff; }
+    header .site-header .header-content p {
+      font-size: 1rem;
+      margin-bottom: 30px;
+      color: #fff; }
+    header .site-header .header-content .cta {
+      display: flex;
+      justify-content: flex-start; }
+      header .site-header .header-content .cta .btn {
+        min-width: 160px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        padding: 15px 20px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #fff;
+        border-radius: 100px;
+        background: #21d397;
+        margin-right: 25px; }
