@@ -7,6 +7,9 @@
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 62.5%; }
+  @media (max-width: 768px) {
+    body {
+      overflow-x: hidden; } }
 
 h2 {
   font-size: 2.7rem; }
@@ -40,23 +43,46 @@ header {
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
-      align-items: baseline; }
+      align-items: baseline;
+      overflow: hidden; }
       header .navegation .navbar .nav-logo {
-        flex-basis: 30%; }
+        flex-basis: 30%;
+        z-index: 2; }
         header .navegation .navbar .nav-logo a {
           color: #fff;
           font-size: 25px; }
           header .navegation .navbar .nav-logo a span {
             color: #21d397; }
-      header .navegation .navbar ul.nav-links {
+      header .navegation .navbar .nav-links {
         flex-basis: 60%;
         display: flex;
         justify-content: flex-end; }
-        header .navegation .navbar ul.nav-links li.nav-item a {
+        header .navegation .navbar .nav-links li.nav-item a {
           text-transform: uppercase;
           color: #fff;
           font-size: 15px;
           margin-right: 35px; }
+          @media (max-width: 768px) {
+            header .navegation .navbar .nav-links li.nav-item a {
+              margin-right: 0px; } }
+        @media (max-width: 768px) {
+          header .navegation .navbar .nav-links li.nav-item {
+            opacity: 0; } }
+        @media (max-width: 768px) {
+          header .navegation .navbar .nav-links {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100vh;
+            background-color: #45328a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            width: 50%;
+            transform: translateX(-100%);
+            transition: transform 0.5s ease-in;
+            z-index: 1; } }
       header .navegation .navbar a.btn {
         color: #fff;
         font-size: 12px;
@@ -72,6 +98,29 @@ header {
         transition: all .5s ease; }
         header .navegation .navbar a.btn:hover {
           background-color: #7450fe; }
+        @media (max-width: 768px) {
+          header .navegation .navbar a.btn {
+            display: none; } }
+      header .navegation .navbar .nav-active {
+        transform: translateX(0%); }
+      header .navegation .navbar .burger {
+        display: none; }
+        header .navegation .navbar .burger div {
+          width: 25px;
+          height: 3px;
+          margin: 3px;
+          background-color: #fff;
+          transition: all .3s ease-in-out; }
+        @media (max-width: 768px) {
+          header .navegation .navbar .burger {
+            cursor: pointer;
+            display: block; } }
+      header .navegation .navbar .toggle .line1 {
+        transform: rotate(-45deg) translate(-6px, 3px); }
+      header .navegation .navbar .toggle .line2 {
+        opacity: 0; }
+      header .navegation .navbar .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -3px); }
   header .site-header {
     padding-top: 30px;
     width: 80%;
@@ -82,7 +131,8 @@ header {
     padding-bottom: 100px; }
     @media (max-width: 768px) {
       header .site-header {
-        display: block; } }
+        display: block;
+        padding-bottom: 0px; } }
     header .site-header .header-content h2 {
       font-weight: 500;
       margin-bottom: 20px;
@@ -105,9 +155,14 @@ header {
         border-radius: 100px;
         background: #21d397;
         margin-right: 25px;
-        transition: all 1.5s ease; }
+        transition: all 0.5s ease; }
         header .site-header .header-content .cta .btn:hover {
-          background-color: #7450fe; }
+          background-color: #7450fe;
+          box-shadow: 1px 1px 10px #21d398c2; }
+        @media (max-width: 768px) {
+          header .site-header .header-content .cta .btn {
+            min-width: 145px;
+            margin-right: 15px; } }
 
 main {
   background: url("/img/bg-about.svg") no-repeat center center/cover; }
@@ -118,6 +173,10 @@ main {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     align-items: center; }
+    @media (max-width: 768px) {
+      main .site-main {
+        grid-template-columns: 1fr;
+        margin-top: 1rem; } }
     main .site-main .main-image img {
       transition: all 1s ease-out;
       animation: bounce 5s infinite; }
@@ -146,6 +205,62 @@ main {
       color: #718096;
       font-weight: 400;
       margin-top: 15px; }
+
+footer {
+  padding: 80px 0;
+  margin-top: 100px;
+  background: url("/img/footer-bg.png") no-repeat;
+  background-size: cover; }
+  @media (max-width: 768px) {
+    footer {
+      background-position: center; } }
+  footer .site-footer {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    grid-gap: 50px; }
+    @media (max-width: 768px) {
+      footer .site-footer {
+        grid-template-columns: 1fr;
+        place-items: self-start; } }
+    footer .site-footer .column .nav-logo {
+      flex-basis: 30%; }
+      footer .site-footer .column .nav-logo a {
+        color: #fff;
+        font-size: 25px; }
+        footer .site-footer .column .nav-logo a span {
+          color: #21d397; }
+    footer .site-footer .column p {
+      margin-bottom: 15px;
+      font-size: 13px;
+      color: #d3cdcd; }
+    footer .site-footer .column .footer-social-info i {
+      font-size: 16px;
+      color: #fff;
+      margin-right: 15px;
+      transition-duration: 500ms; }
+      footer .site-footer .column .footer-social-info i:hover {
+        color: #007bff; }
+    footer .site-footer .column h5 {
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      color: #fff;
+      line-height: 1.4;
+      font-weight: 500; }
+    footer .site-footer .column .navegation-footer ul li a {
+      text-transform: uppercase;
+      color: #d3cdcd;
+      font-size: 14px; }
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px); }
+  to {
+    opacity: 1;
+    transform: translateX(0px); } }
 
 @keyframes bounce {
   0% {

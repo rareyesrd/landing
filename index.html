@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -22,6 +22,11 @@
                     <li class="nav-item"><a href="#"> Blog</a></li>
                 </ul>
                 <a href="#" class="btn"> Suscribe</a>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
             </div>
         </nav>
         <div class="site-header">
@@ -31,7 +36,7 @@
                 </h2>
                 <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque facilis perspiciatis adipisci quis
-                    enim maiores possimus modi provident, magni eum quibusdam id corporis?
+                    enim maiores possimus modi provident, magni eum quibusdam id corporis
                 </p>
                 <div class="cta">
                     <div class="btn">
@@ -42,12 +47,13 @@
                     </div>
                 </div>
             </div>
-            <div class="header-image">
-                <img src="img/isometric-image.png" alt="isometric-image">
+            <div id="scene">
+                <div class="layer" data-depth=".3">
+                    <img src="img/isometric-image.png" alt="isometric-image">
+                </div>
             </div>
         </div>
     </header>
-
     <main>
         <div class="site-main">
             <div class="main-image">
@@ -66,16 +72,44 @@
                 <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque praesentium harum iure eos, Quas
                     sequi repudiandae nostrum saepe excepturi maiores modi.</P>
                 <a href="#" class="learnMore">Learn More</a>
-
             </div>
             <div class="main-image">
-                <img src="img/main2.svg" alt="mobile search" >
+                <img src="img/main2.svg" alt="mobile search">
             </div>
         </div>
     </main>
 
     <footer>
-
+        <div class="site-footer">
+            <div class="column">
+                <div class="nav-logo">
+                    <a href=""><span>LAN</span>DING</a>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ducimus voluptatibus neque illo id repellat quisquam? Autem expedita earum quae laborum ipsum ad.
+                </p>
+                <div class="footer-social-info">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"> <i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-google-plus"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="column">
+                <h5>Navegation</h5>
+                <div class="navegation-footer">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="column">
+                <h5>Contact us</h5>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quas, sequi itaque dicta consequuntur distinctio.</p>
+            </div>
+        </div>
     </footer>
 
 
@@ -103,11 +137,12 @@
 
 
 
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/parallax.js"></script>
     <script src="js/script.js"></script>
+    <script>
+		var scene = document.getElementById('scene');
+		var parallax = new Parallax(scene);
+	</script>
 </body>
 
 </html>

@@ -9,6 +9,9 @@
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 62.5%;
+    @media (max-width:768px) {
+        overflow-x: hidden;
+    }
 }
 
 // General styles
@@ -45,7 +48,6 @@ img {
 
 header {
     background: url('../img/wave.png') no-repeat center center / cover;
-
     .navegation {
         padding: 20px;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -56,7 +58,7 @@ header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-
+            overflow: hidden;
             .nav-logo {
                 flex-basis: 30%;
 
@@ -69,10 +71,11 @@ header {
                         color: #21d397;
                     }
                 }
+                z-index: 2;
 
             }
 
-            ul.nav-links {
+            .nav-links {
                 flex-basis: 60%;
                 display: flex;
                 justify-content: flex-end;
@@ -83,8 +86,30 @@ header {
                         color: #fff;
                         font-size: 15px;
                         margin-right: 35px;
+                        @media(max-width: 768px){
+                            margin-right: 0px;
+                        }
+                    }
+                    @media(max-width: 768px){
+                        opacity: 0;
                     }
                 }
+                @media(max-width: 768px){
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100vh;
+                    background-color: #45328a;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                    width: 50%;
+                    transform: translateX(-100%);
+                    transition: transform 0.5s ease-in;
+                    z-index: 1;
+                }
+                
             }
 
             a.btn {
@@ -104,8 +129,41 @@ header {
                 &:hover {
                     background-color: #7450fe;
                 }
+                @media(max-width: 768px){
+                    display: none;
+                }
+            }
+            .nav-active{
+                    transform: translateX(0%);
+                }
+            .burger{
+                display: none;
+                div{
+                    width: 25px;
+                    height: 3px;
+                    margin: 3px;
+                    background-color: #fff;
+                    transition: all .3s ease-in-out;
+                    
+                }
+                @media(max-width: 768px){
+                    cursor: pointer;
+                    display: block;
+                }
+            }   
+            .toggle{
+                .line1{
+                    transform: rotate(-45deg) translate(-6px, 3px);
+                }
+                .line2{
+                    opacity: 0;
+                }
+                .line3{
+                    transform: rotate(45deg) translate(-5px, -3px);
+                }
             }
         }
+        
     }
 
     .site-header {
@@ -119,6 +177,7 @@ header {
 
         @media(max-width: 768px) {
             display: block;
+            padding-bottom: 0px;
         }
 
         .header-content {
@@ -149,10 +208,16 @@ header {
                     border-radius: 100px;
                     background: #21d397;
                     margin-right: 25px;
-                    transition: all 1.5s ease;
+                    transition: all 0.5s ease;
 
                     &:hover {
                         background-color: #7450fe;
+                        box-shadow: 1px 1px 10px #21d398c2;
+                    }
+
+                    @media(max-width:768px) {
+                        min-width: 145px;
+                        margin-right: 15px;
                     }
                 }
             }
@@ -163,6 +228,7 @@ header {
 
 main {
     background: url('/img/bg-about.svg') no-repeat center center / cover;
+
     .site-main {
         width: 80%;
         margin: 5rem auto;
@@ -170,12 +236,20 @@ main {
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 20px;
         align-items: center;
-        .main-image{
-            img{
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            margin-top: 1rem;
+
+        }
+
+        .main-image {
+            img {
                 transition: all 1s ease-out;
                 animation: bounce 5s infinite;
             }
         }
+
         .main-info {
             a.btn {
                 color: #fff;
@@ -215,14 +289,101 @@ main {
     }
 }
 
+footer {
+    padding: 80px 0;
+    margin-top: 100px;
+    background: url('/img/footer-bg.png') no-repeat;
+    background-size: cover;
+
+    @media(max-width:768px) {
+        background-position: center;
+    }
+
+    .site-footer {
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        place-items: center;
+        grid-gap: 50px;
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+            place-items: self-start;
+        }
+
+        .column {
+            .nav-logo {
+                flex-basis: 30%;
+
+                a {
+                    color: #fff;
+                    font-size: 25px;
+
+                    span {
+                        color: #21d397;
+                    }
+                }
+            }
+
+            p {
+                margin-bottom: 15px;
+                font-size: 13px;
+                color: #d3cdcd;
+            }
+            .footer-social-info {
+                i {
+                    font-size: 16px;
+                    color: #fff;
+                    margin-right: 15px;
+                    transition-duration: 500ms;
+                    &:hover{
+                        color: #007bff;
+                    }
+                }
+
+            }
+            h5 {
+                text-transform: uppercase;
+                font-size: 1.2rem;
+                color: #fff;
+                line-height: 1.4;
+                font-weight: 500;
+            }
+
+            .navegation-footer {
+                ul {
+                    li {
+                        a {
+                            text-transform: uppercase;
+                            color: #d3cdcd;
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
 @keyframes bounce {
     0% {
-      transform: translateY(0px);
+        transform: translateY(0px);
     }
+
     50% {
         transform: translateY(20px);
-      }
-    100% {
-      transform: translateY(0px);
     }
-  }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
